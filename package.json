@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "vite",
-    "build": "vite build --base=/tut-repo/",
+    "build": "vite build --base=/tut_repo/",
     "serve": "vite preview"
   },
   "devDependencies": {
