@@ -9,7 +9,7 @@ git checkout -B master
 git add -A
 git commit -m "latest deploy"
 
-git push -f https://github.com/alexlipovka/tut-repo.git master:dist
+git push -f git@github.com:alexlipovka/tut_repo.git master:dist
 
 @REM возвращаеемся в рабочую папку
 cd ..
