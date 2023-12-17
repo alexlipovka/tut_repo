@@ -6,8 +6,8 @@ import OSM from 'ol/source/OSM';
 import { fromLonLat } from 'ol/proj';
 
 
-const geoserver_addr = 'http://localhost:8080/geoserver';
-// const geoserver_addr = '/geoserver';
+// const geoserver_addr = 'http://localhost:8080/geoserver';
+const geoserver_addr = '/geoserver';
 
 // new TileLayer({
 //   source: new TileWMS({
@@ -41,9 +41,10 @@ const map = new Map({
       source: new OSM(),
       name: 'OSM',
     }),
-    geoLayer('kras:water_poly', 'kras:water_poly'),
-    geoLayer('kras:water_line', 'kras:water_line'),
-    geoLayer('kras:border', 'kras:red_border'),
+    // geoLayer('kras:water_poly', 'kras:water_poly'),
+    // geoLayer('kras:water_line', 'kras:water_line'),
+    // geoLayer('kras:border', 'kras:red_border'),
+    geoLayer('ne:world'),
 
   ],
 
