@@ -7,7 +7,7 @@ import { fromLonLat } from 'ol/proj';
 
 
 // const geoserver_addr = 'http://localhost:8080/geoserver';
-const geoserver_addr = '/geoserver';
+const geoserver_addr = 'https://geo.alexlipovka.com/geoserver';
 
 // new TileLayer({
 //   source: new TileWMS({
