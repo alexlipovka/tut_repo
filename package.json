@@ -9,7 +9,7 @@
     "build_and_deploy": "pnpm run build && deploy.bat"
   },
   "devDependencies": {
-    "vite": "^5.0.6"
+    "vite": "^5.0.10"
   },
   "dependencies": {
     "ol": "latest",
