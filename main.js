@@ -70,9 +70,17 @@ const map = new Map({
 });
 
 students.map((s, sIndex) => {
+  var ul = document.getElementById('legend');
+  var p = document.createElement('p');
+  var p_text = document.createTextNode(s.name);
+  p.classList.add('bold');
+  p.appendChild(p_text);
+  ul.appendChild(p);//.createTextNode(s.name).classList.add('bold'));
+  var li = document.createElement('ul');
+  ul.appendChild(li);
+  ul = li;
   s.layers.map((l, lIndex) => {
     map.addLayer(geoLayer(l.serverName, '', sIndex * 10 + lIndex));
-    var ul = document.getElementById('layers');
     var li = document.createElement('li');
     li.appendChild(document.createTextNode(l.legendName));
     ul.appendChild(li);
