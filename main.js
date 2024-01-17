@@ -17,6 +17,25 @@ const geoserver_addr = 'https://geo.alexlipovka.com/geoserver';
 //     transition: 0,
 //   }),
 // }),
+var students = [
+  {
+    name: 'Student 1',
+    source: '1',
+    layers: [
+      {serverName: 'sfu:landuse', legendName: 'Землепользование'},
+      {serverName: 'sfu:Kacha', legendName: 'Енисей и Кача'}, 
+      {serverName: 'sfu:amenity', legendName: 'Школы и детские сады'}, 
+      {serverName: 'sfu:bus', legendName: 'Остановки'}, 
+      {serverName: 'sfu:kadastr', legendName: 'Межевание'}, 
+      {serverName: 'sfu:krt', legendName: 'КРТ'}
+    ]
+    // layers: ['amenity']
+  }
+];
+
+var layers = [
+  'sfu:amenity',
+];
 
 function geoLayer(layer, style = '', z) {
   var params = {}
@@ -42,18 +61,22 @@ const map = new Map({
       source: new OSM(),
       name: 'OSM',
     }),
-    geoLayer('sfu:amenity', 'sfu:amenity', 1),
-    geoLayer('sfu:landuse', 'sfu:landuse', 2),
-    // geoLayer('kras:water_line', 'kras:water_line'),
-    // geoLayer('kras:border', 'kras:red_border'),
-    // geoLayer('ne:world'),
-
   ],
 
   view: new View({
-    // center: [0, 0],
     center: fromLonLat([92.852572, 56.010569]),
     zoom: 11
+  })
+});
+
+students.map((s, sIndex) => {
+  s.layers.map((l, lIndex) => {
+    map.addLayer(geoLayer(l.serverName, '', sIndex * 10 + lIndex));
+    var ul = document.getElementById('layers');
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(l.legendName));
+    ul.appendChild(li);
+    li.addEventListener('click', function () { toggleVisibility(l.serverName); });
   })
 });
 
@@ -64,30 +87,19 @@ function switchVisibility() {
     console.log(l.values_.name);
   }
 }
+
 document.querySelector('#listLayers').addEventListener('click', switchVisibility);
 
 function toggleVisibility(layerName) {
+  console.log('Searching for layer: ' + layerName);
   for (let i = 0; i < map.getLayers().getArray().length; i++) {
     var l = map.getLayers().getArray()[i];
-    if(l.values_.name === layerName) {
+    if (l.values_.name === layerName) {
       l.setVisible(!l.getVisible());
+      console.log('Toggled layer: ' + layerName);
       break;
     }
   }
 }
 
-function toggleOSM() {
-  toggleVisibility("OSM");
-}
-
-function toggleBorder() {
-  toggleVisibility("sfu:amenity");
-}
-
-function toggleWater() {
-  toggleVisibility("sfu:landuse");
-}
-
-document.querySelector('#layerOSM').addEventListener('click', toggleOSM);
-document.querySelector('#layerBorder').addEventListener('click', toggleBorder);
-document.querySelector('#layerWater').addEventListener('click', toggleWater);
+document.querySelector('#layerOSM').addEventListener('click', function () { toggleVisibility('OSM')});
