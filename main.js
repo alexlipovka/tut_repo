@@ -18,7 +18,7 @@ const geoserver_addr = 'https://geo.alexlipovka.com/geoserver';
 //   }),
 // }),
 
-function geoLayer(layer, style = '', name = layer) {
+function geoLayer(layer, style = '', z) {
   var params = {}
   params['TILED'] = true;
   params['LAYERS'] = layer;
@@ -30,7 +30,8 @@ function geoLayer(layer, style = '', name = layer) {
       serverType: 'geoserver',
       transition: 0,
     }),
-    name: name,
+    name: layer,
+    zIndex: z,
   });
 }
 
@@ -41,10 +42,11 @@ const map = new Map({
       source: new OSM(),
       name: 'OSM',
     }),
-    // geoLayer('kras:water_poly', 'kras:water_poly'),
+    geoLayer('sfu:amenity', 'sfu:amenity', 1),
+    geoLayer('sfu:landuse', 'sfu:landuse', 2),
     // geoLayer('kras:water_line', 'kras:water_line'),
     // geoLayer('kras:border', 'kras:red_border'),
-    geoLayer('ne:world'),
+    // geoLayer('ne:world'),
 
   ],
 
@@ -79,12 +81,11 @@ function toggleOSM() {
 }
 
 function toggleBorder() {
-  toggleVisibility("kras:border");
+  toggleVisibility("sfu:amenity");
 }
 
 function toggleWater() {
-  toggleVisibility("kras:water_poly");
-  toggleVisibility("kras:water_line");
+  toggleVisibility("sfu:landuse");
 }
 
 document.querySelector('#layerOSM').addEventListener('click', toggleOSM);
