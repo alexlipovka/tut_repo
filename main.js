@@ -117,6 +117,7 @@ students.map((s, sIndex) => {
   s.layers.map((l, lIndex) => {
     map.addLayer(geoLayer(l.serverName, '', sIndex * 10 + lIndex));
     var li = document.createElement('li');
+    li.id = l.serverName;
     var legendIcon = document.createElement('img');
     legendIcon.src='https://geo.alexlipovka.com/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=60&HEIGHT=30&transparent=true&LAYER=' + l.serverName;
     li.appendChild(legendIcon);
@@ -142,6 +143,8 @@ function toggleVisibility(layerName) {
     var l = map.getLayers().getArray()[i];
     if (l.values_.name === layerName) {
       l.setVisible(!l.getVisible());
+      var li = document.getElementById(layerName);
+      l.getVisible() ? li.classList.remove('layerInvisible') : li.classList.add('layerInvisible');
       console.log('Toggled layer: ' + layerName);
       break;
     }

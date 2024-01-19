@@ -92,8 +92,13 @@ main {
   font-weight: 600;
 }
 
+.layerInvisible {
+  color: grey;
+}
+
 .legend li:hover:not(.groupLayer) {
   background-color: #ddd;
+  border-radius: 6px;
 }
 
 footer {
