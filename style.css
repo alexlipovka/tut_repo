@@ -77,6 +77,8 @@ main {
   padding:20px;
   border-radius: 0 0 0 10px;
   box-shadow: 0 0 5px 0 black;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .legend li {
