@@ -29,7 +29,42 @@ var students = [
       {serverName: 'sfu:kadastr', legendName: 'Межевание'}, 
       {serverName: 'sfu:krt', legendName: 'КРТ'}
     ]
-    // layers: ['amenity']
+  },
+  {
+    name: 'Student 2',
+    source: 'nosova',
+    layers: [
+      {serverName: 'sfu:natural', legendName: 'Озеленение'},
+      {serverName: 'sfu:railway1', legendName: 'Ж/д'},
+      {serverName: 'sfu:river', legendName: 'Река'}
+    ]
+  },
+  {
+    name: 'Student 3',
+    source: 'mashukova',
+    layers: [
+      {serverName: 'sfu:cemetry', legendName: 'Кладбище'},
+      {serverName: 'sfu:griva', legendName: 'Гремячая Грива'},
+      {serverName: 'sfu:university', legendName: 'Университет'}
+    ]
+  },
+  {
+    name: 'Student 4',
+    source: 'block',
+    layers: [
+      {serverName: 'sfu:zone', legendName: 'Зона'},
+      {serverName: 'sfu:grass', legendName: 'Озеленение'},
+      {serverName: 'sfu:line', legendName: 'Граница'}
+    ]
+  },
+  {
+    name: 'Student 5',
+    source: 'first',
+    layers: [
+      {serverName: 'sfu:highway_1', legendName: 'УДС'},
+      {serverName: 'sfu:natural_1', legendName: 'Река'},
+      {serverName: 'sfu:building_1', legendName: 'Застройка'}
+    ]
   }
 ];
 
