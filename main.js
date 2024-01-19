@@ -117,6 +117,9 @@ students.map((s, sIndex) => {
   s.layers.map((l, lIndex) => {
     map.addLayer(geoLayer(l.serverName, '', sIndex * 10 + lIndex));
     var li = document.createElement('li');
+    var legendIcon = document.createElement('img');
+    legendIcon.src='https://geo.alexlipovka.com/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=60&HEIGHT=30&transparent=true&LAYER=' + l.serverName;
+    li.appendChild(legendIcon);
     li.appendChild(document.createTextNode(l.legendName));
     ul.appendChild(li);
     li.addEventListener('click', function () { toggleVisibility(l.serverName); });
