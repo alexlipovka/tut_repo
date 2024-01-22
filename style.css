@@ -37,6 +37,10 @@ body {
   align-items: stretch;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   display: flex;
   background-color: #3b3b3d;

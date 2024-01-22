@@ -21,6 +21,7 @@ var students = [
   {
     name: 'Student 1',
     source: '1',
+    center: [92.852572, 56.010569],
     layers: [
       {serverName: 'sfu:landuse', legendName: 'Землепользование'},
       {serverName: 'sfu:Kacha', legendName: 'Енисей и Кача'}, 
@@ -33,6 +34,7 @@ var students = [
   {
     name: 'Student 2',
     source: 'nosova',
+    center: [92.852572, 56.010569],
     layers: [
       {serverName: 'sfu:natural', legendName: 'Озеленение'},
       {serverName: 'sfu:railway1', legendName: 'Ж/д'},
@@ -42,6 +44,7 @@ var students = [
   {
     name: 'Student 3',
     source: 'mashukova',
+    center: [92.852572, 56.010569],
     layers: [
       {serverName: 'sfu:cemetry', legendName: 'Кладбище'},
       {serverName: 'sfu:griva', legendName: 'Гремячая Грива'},
@@ -51,6 +54,7 @@ var students = [
   {
     name: 'Student 4',
     source: 'block',
+    center: [92.852572, 56.010569],
     layers: [
       {serverName: 'sfu:zone', legendName: 'Зона'},
       {serverName: 'sfu:grass', legendName: 'Озеленение'},
@@ -60,10 +64,21 @@ var students = [
   {
     name: 'Student 5',
     source: 'first',
+    center: [92.852572, 56.010569],
     layers: [
       {serverName: 'sfu:highway_1', legendName: 'УДС'},
       {serverName: 'sfu:natural_1', legendName: 'Река'},
       {serverName: 'sfu:building_1', legendName: 'Застройка'}
+    ]
+  },
+  {
+    name: 'Student 6',
+    source: 'minusinsk',
+    center: [91.686981, 53.710015],
+    layers: [
+      {serverName: 'sfu:graniza', legendName: 'Граница'},
+      {serverName: 'sfu:highway', legendName: 'УДС'},
+      {serverName: 'sfu:park', legendName: 'Парк'}
     ]
   }
 ];
@@ -89,6 +104,11 @@ function geoLayer(layer, style = '', z) {
   });
 }
 
+const view = new View({
+  center: fromLonLat([92.852572, 56.010569]),
+  zoom: 11
+});
+
 const map = new Map({
   target: 'map',
   layers: [
@@ -98,10 +118,7 @@ const map = new Map({
     }),
   ],
 
-  view: new View({
-    center: fromLonLat([92.852572, 56.010569]),
-    zoom: 11
-  })
+  view: view,
 });
 
 students.map((s, sIndex) => {
@@ -109,6 +126,7 @@ students.map((s, sIndex) => {
   var p = document.createElement('p');
   var p_text = document.createTextNode(s.name);
   p.classList.add('bold');
+  p.addEventListener('click', function () {view.setCenter(fromLonLat(s.center))});
   p.appendChild(p_text);
   ul.appendChild(p);//.createTextNode(s.name).classList.add('bold'));
   var li = document.createElement('ul');
