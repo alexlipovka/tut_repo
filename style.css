@@ -94,6 +94,23 @@ main {
   align-items: center;
 }
 
+.legend li img {
+  min-width: 60px;
+  min-height: 30px;
+}
+
+.legend .map_icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('/img/map.png');
+}
+
+.legend .view_icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('/img/view.png');
+}
+
 .bold {
   font-weight: 600;
 }

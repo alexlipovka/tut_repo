@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 import { Map, View } from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import TileWMS from 'ol/source/TileWMS';
@@ -23,12 +23,12 @@ var students = [
     source: '1',
     center: [92.852572, 56.010569],
     layers: [
-      {serverName: 'sfu:landuse', legendName: 'Землепользование'},
-      {serverName: 'sfu:Kacha', legendName: 'Енисей и Кача'}, 
-      {serverName: 'sfu:amenity', legendName: 'Школы и детские сады'}, 
-      {serverName: 'sfu:bus', legendName: 'Остановки'}, 
-      {serverName: 'sfu:kadastr', legendName: 'Межевание'}, 
-      {serverName: 'sfu:krt', legendName: 'КРТ'}
+      { serverName: 'sfu:landuse', legendName: 'Землепользование' },
+      { serverName: 'sfu:Kacha', legendName: 'Енисей и Кача' },
+      { serverName: 'sfu:amenity', legendName: 'Школы и детские сады' },
+      { serverName: 'sfu:bus', legendName: 'Остановки' },
+      { serverName: 'sfu:kadastr', legendName: 'Межевание' },
+      { serverName: 'sfu:krt', legendName: 'КРТ' }
     ]
   },
   {
@@ -36,9 +36,9 @@ var students = [
     source: 'nosova',
     center: [92.852572, 56.010569],
     layers: [
-      {serverName: 'sfu:natural', legendName: 'Озеленение'},
-      {serverName: 'sfu:railway1', legendName: 'Ж/д'},
-      {serverName: 'sfu:river', legendName: 'Река'}
+      { serverName: 'sfu:natural', legendName: 'Озеленение' },
+      { serverName: 'sfu:railway1', legendName: 'Ж/д' },
+      { serverName: 'sfu:river', legendName: 'Река' }
     ]
   },
   {
@@ -46,9 +46,9 @@ var students = [
     source: 'mashukova',
     center: [92.852572, 56.010569],
     layers: [
-      {serverName: 'sfu:cemetry', legendName: 'Кладбище'},
-      {serverName: 'sfu:griva', legendName: 'Гремячая Грива'},
-      {serverName: 'sfu:university', legendName: 'Университет'}
+      { serverName: 'sfu:cemetry', legendName: 'Кладбище' },
+      { serverName: 'sfu:griva', legendName: 'Гремячая Грива' },
+      { serverName: 'sfu:university', legendName: 'Университет' }
     ]
   },
   {
@@ -56,9 +56,9 @@ var students = [
     source: 'block',
     center: [92.852572, 56.010569],
     layers: [
-      {serverName: 'sfu:zone', legendName: 'Зона'},
-      {serverName: 'sfu:grass', legendName: 'Озеленение'},
-      {serverName: 'sfu:line', legendName: 'Граница'}
+      { serverName: 'sfu:zone', legendName: 'Зона' },
+      { serverName: 'sfu:grass', legendName: 'Озеленение' },
+      { serverName: 'sfu:line', legendName: 'Граница' }
     ]
   },
   {
@@ -66,9 +66,9 @@ var students = [
     source: 'first',
     center: [92.852572, 56.010569],
     layers: [
-      {serverName: 'sfu:highway_1', legendName: 'УДС'},
-      {serverName: 'sfu:natural_1', legendName: 'Река'},
-      {serverName: 'sfu:building_1', legendName: 'Застройка'}
+      { serverName: 'sfu:highway_1', legendName: 'УДС' },
+      { serverName: 'sfu:natural_1', legendName: 'Река' },
+      { serverName: 'sfu:building_1', legendName: 'Застройка' }
     ]
   },
   {
@@ -76,9 +76,41 @@ var students = [
     source: 'minusinsk',
     center: [91.686981, 53.710015],
     layers: [
-      {serverName: 'sfu:graniza', legendName: 'Граница'},
-      {serverName: 'sfu:highway', legendName: 'УДС'},
-      {serverName: 'sfu:park', legendName: 'Парк'}
+      { serverName: 'sfu:graniza', legendName: 'Граница' },
+      { serverName: 'sfu:highway', legendName: 'УДС' },
+      { serverName: 'sfu:park', legendName: 'Парк' }
+    ]
+  },
+  {
+    name: 'Student 7',
+    source: 'pilipenko',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:building', legendName: 'Застройка'},
+      { serverName: 'sfu:granica', legendName: 'Граница'},
+      { serverName: 'sfu:landscaping', legendName: 'Ландшафт'},
+      { serverName: 'sfu:slope', legendName: 'Уклоны'},
+      { serverName: 'sfu:transportway', legendName: 'УДС'}
+    ]
+  },
+  {
+    name: 'Student 8',
+    source: 'semchencko_k',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:rekonstruktsia', legendName: 'Реконструкция'},
+      { serverName: 'sfu:krt_nikolaevka', legendName: 'КРТ'},
+      { serverName: 'sfu:vethoe', legendName: 'Ветхое жилье'}
+    ]
+  },
+  {
+    name: 'Student 9',
+    source: 'barsegyan',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:granica_jeleznodorojnikov', legendName: 'Граница'},
+      { serverName: 'sfu:pechexod_dvijenie', legendName: 'Пешеходное движение'},
+      { serverName: 'sfu:plochadi_svobodn', legendName: 'Свободные площади'}
     ]
   }
 ];
@@ -126,8 +158,17 @@ students.map((s, sIndex) => {
   var p = document.createElement('p');
   var p_text = document.createTextNode(s.name);
   p.classList.add('bold');
-  p.addEventListener('click', function () {view.setCenter(fromLonLat(s.center))});
+  p.addEventListener('click', function () { view.setCenter(fromLonLat(s.center)) });
   p.appendChild(p_text);
+  // var map_icon = document.createElement('img');
+  // map_icon.src='/img/map.png';
+  // p.appendChild(map_icon);
+  // var view_icon = document.createElement('img');
+  // view_icon.src='/img/view.png';
+  // p.appendChild(view_icon);
+  // var hide_icon = document.createElement('img');
+  // hide_icon.src='/img/hide.png';
+  // p.appendChild(hide_icon);
   ul.appendChild(p);//.createTextNode(s.name).classList.add('bold'));
   var li = document.createElement('ul');
   ul.appendChild(li);
@@ -137,7 +178,7 @@ students.map((s, sIndex) => {
     var li = document.createElement('li');
     li.id = l.serverName;
     var legendIcon = document.createElement('img');
-    legendIcon.src='https://geo.alexlipovka.com/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=60&HEIGHT=30&transparent=true&LAYER=' + l.serverName;
+    legendIcon.src = 'https://geo.alexlipovka.com/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=60&HEIGHT=30&transparent=true&LAYER=' + l.serverName;
     li.appendChild(legendIcon);
     li.appendChild(document.createTextNode(l.legendName));
     ul.appendChild(li);
@@ -169,4 +210,4 @@ function toggleVisibility(layerName) {
   }
 }
 
-document.querySelector('#layerOSM').addEventListener('click', function () { toggleVisibility('OSM')});
+document.querySelector('#layerOSM').addEventListener('click', function () { toggleVisibility('OSM') });
