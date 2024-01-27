@@ -112,6 +112,46 @@ var students = [
       { serverName: 'sfu:pechexod_dvijenie', legendName: 'Пешеходное движение'},
       { serverName: 'sfu:plochadi_svobodn', legendName: 'Свободные площади'}
     ]
+  },
+  {
+    name: 'Student 10',
+    source: 'semchenko_a',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:GRANITsY_REKONSTRUKTsII_granica', legendName: 'Граница'},
+      { serverName: 'sfu:mini_cores', legendName: 'Мини ядра'},
+      { serverName: 'sfu:river_front', legendName: 'Речной фасад'}
+    ]
+  },
+  {
+    name: 'Student 11',
+    source: 'khrushchev_e',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:Project_border', legendName: 'Граница'},
+      { serverName: 'sfu:border_terr_okn', legendName: 'Граница ОКН'},
+      { serverName: 'sfu:object_okn', legendName: 'ОКН'}
+    ]
+  },
+  {
+    name: 'Student 12',
+    source: 'alekseeva',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:building', legendName: 'Застройка'},
+      { serverName: 'sfu:highway', legendName: 'УДС'},
+      { serverName: 'sfu:natural', legendName: 'Озеленение'}
+    ]
+  },
+  {
+    name: 'Student 13',
+    source: 'alsu_minutdinova',
+    center: [92.852572, 56.010569],
+    layers: [
+      { serverName: 'sfu:Highway', legendName: 'Подложка УДС'},
+      { serverName: 'sfu:railway', legendName: 'ЖД пути'},
+      { serverName: 'sfu:boundary', legendName: 'Граница анализируемой территории'}
+    ]
   }
 ];
 
