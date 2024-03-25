@@ -7,7 +7,7 @@ settings:
 dependencies:
   ol:
     specifier: latest
-    version: 8.2.0
+    version: 9.1.0
   proj4:
     specifier: ^2.10.0
     version: 2.10.0
@@ -412,8 +412,8 @@ packages:
     hasBin: true
     dev: true
 
-  /ol@8.2.0:
-    resolution: {integrity: sha512-/m1ddd7Jsp4Kbg+l7+ozR5aKHAZNQOBAoNZ5pM9Jvh4Etkf0WGkXr9qXd7PnhmwiC1Hnc2Toz9XjCzBBvexfXw==}
+  /ol@9.1.0:
+    resolution: {integrity: sha512-nDrkJ2tzZNpo/wzN/PpHV5zdxbnXZaFktoMaD2cFLEc6gCwlgLY21Yd8wnt/4FjaVYwLBnbN9USXSwIBGcyksQ==}
     dependencies:
       color-rgba: 3.0.0
       color-space: 2.0.1
